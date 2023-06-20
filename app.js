@@ -14,6 +14,9 @@ function getComputerChoice(){
 
 }
 
+function getPlayerChoice(){
+    prompt("")
+}
 console.log(getComputerChoice());
 
 
