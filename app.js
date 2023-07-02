@@ -27,9 +27,9 @@ if(computerChoice === playerChoice){
          playerChoice == "Paper" && 
          computerChoice == "Rock"
             ){
-                return `You Lose Computer chose ${computerChoice} and you chose ${playerChoice}`;
+                return `You Lose  ${computerChoice} beats ${playerChoice}`;
             }else{
-                return `You Win! Computer chose ${computerChoice} and you chose ${playerChoice}`;
+                return `You Win!  ${playerChoice} beats ${computerChoice}`;
             }
 }
 
