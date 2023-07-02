@@ -1,3 +1,4 @@
+//randomly return Rock Paper or Scissors
 function getComputerChoice(){
     let rndNum = Math.floor(Math.random()*3);
     switch(rndNum){
@@ -13,10 +14,27 @@ function getComputerChoice(){
     }
 
 }
-
 function getPlayerChoice(){
-    prompt("")
+    return prompt("Enter Rock Paper or Scissors");
 }
-console.log(getComputerChoice());
+function rPSRound(computerChoice,playerChoice){
+if(computerChoice === playerChoice){
+    return "Tie no winner";
+}else if(playerChoice == "Rock" &&
+         computerChoice == "Paper" ||
+         playerChoice == "Scissors" &&
+         computerChoice == "Rock" ||
+         playerChoice == "Paper" && 
+         computerChoice == "Rock"
+            ){
+                return `You Lose Computer chose ${computerChoice} and you chose ${playerChoice}`;
+            }else{
+                return `You Win! Computer chose ${computerChoice} and you chose ${playerChoice}`;
+            }
+}
+
+console.log((rPSRound(getComputerChoice(),getPlayerChoice())));
+
+
 
 
