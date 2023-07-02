@@ -14,9 +14,20 @@ function getComputerChoice(){
     }
 
 }
+
 function getPlayerChoice(){
-    let result = prompt("Enter Rock Paper or Scissors");
-    return result.toLowerCase();
+    while(true){
+        let result = prompt("Enter Rock Paper or Scissors");
+        if(result == null){
+            continue;
+        }
+        result = result.toLowerCase();
+        if(result == "rock" || 
+           result == "paper"||
+           result == "scissors"){
+            return result;
+           }
+    }
 }
 function rPSRound(computerChoice,playerChoice){
 if(computerChoice === playerChoice){
