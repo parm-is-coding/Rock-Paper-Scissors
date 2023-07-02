@@ -3,29 +3,30 @@ function getComputerChoice(){
     let rndNum = Math.floor(Math.random()*3);
     switch(rndNum){
         case 0:
-            return "Rock";
+            return "rock";
         break;
         case 1:
-            return "Paper";
+            return "paper";
         break;
         case 2:
-            return "Scissors";
+            return "scissors";
         break;
     }
 
 }
 function getPlayerChoice(){
-    return prompt("Enter Rock Paper or Scissors");
+    let result = prompt("Enter Rock Paper or Scissors");
+    return lower(result);
 }
 function rPSRound(computerChoice,playerChoice){
 if(computerChoice === playerChoice){
     return "Tie no winner";
-}else if(playerChoice == "Rock" &&
-         computerChoice == "Paper" ||
-         playerChoice == "Scissors" &&
-         computerChoice == "Rock" ||
-         playerChoice == "Paper" && 
-         computerChoice == "Rock"
+}else if(playerChoice == "rock" &&
+         computerChoice == "paper" ||
+         playerChoice == "scissors" &&
+         computerChoice == "rock" ||
+         playerChoice == "paper" && 
+         computerChoice == "rock"
             ){
                 return `You Lose  ${computerChoice} beats ${playerChoice}`;
             }else{
