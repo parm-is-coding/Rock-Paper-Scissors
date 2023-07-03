@@ -50,7 +50,7 @@ if(computerChoice === playerChoice){
 function game(){
     let playerWins = 0;
     let compWins = 0;
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < 1; i++){
         let result = rPSRound(getComputerChoice(),getPlayerChoice()).substring(0,8);
         if(result == "You Lose"){
             compWins++;
