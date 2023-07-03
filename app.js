@@ -74,10 +74,10 @@ rock.addEventListener("click",() => {
 })
 const paper = document.querySelector("#paper");
 paper.addEventListener("click",() => {
-    output.textContent = rPSRound(getComputerChoice(),"rock");
+    output.textContent = rPSRound(getComputerChoice(),"paper");
 })
 const scissors = document.querySelector("#scissors")
 scissors.addEventListener("click",() => {
-    output.textContent = rPSRound(getComputerChoice(),"rock");
+    output.textContent = rPSRound(getComputerChoice(),"scissors");
 })
 
