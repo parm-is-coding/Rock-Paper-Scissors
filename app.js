@@ -65,5 +65,19 @@ function game(){
     }
 }
 
-console.log(game());
+const container = document.querySelector("#container");
+const output = document.createElement("p");
+container.appendChild(output);
+const rock = document.querySelector("#rock");
+rock.addEventListener("click",() => {
+    output.textContent = rPSRound(getComputerChoice(),"rock");
+})
+const paper = document.querySelector("#paper");
+paper.addEventListener("click",() => {
+    output.textContent = rPSRound(getComputerChoice(),"rock");
+})
+const scissors = document.querySelector("#scissors")
+scissors.addEventListener("click",() => {
+    output.textContent = rPSRound(getComputerChoice(),"rock");
+})
 
