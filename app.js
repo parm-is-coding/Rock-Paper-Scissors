@@ -47,15 +47,24 @@ if(computerChoice === playerChoice){
 
 
 
-function game(){
+function game(playerChoice){
+    const playerScore = document.querySelector("#playerScore");
+    const compScore = document.querySelector("#compScore");
+    const container = document.querySelector("#container");
+    const output = document.createElement("p");
+    container.appendChild(output);
+
     let playerWins = 0;
     let compWins = 0;
     for(let i = 0; i < 1; i++){
-        let result = rPSRound(getComputerChoice(),getPlayerChoice()).substring(0,8);
-        if(result == "You Lose"){
+        let result = rPSRound(getComputerChoice(),playerChoice);
+        output.textContent = result;
+        if(result.substring(0,8) == "You Lose"){
             compWins++;
+            compScore.textContent = compWins;
         }else{
             playerWins++;
+            playerScore.textContent = playerWins;
         }
     }
     if(playerWins > compWins){
@@ -71,6 +80,7 @@ container.appendChild(output);
 const rock = document.querySelector("#rock");
 rock.addEventListener("click",() => {
     output.textContent = rPSRound(getComputerChoice(),"rock");
+
 })
 const paper = document.querySelector("#paper");
 paper.addEventListener("click",() => {
