@@ -15,20 +15,7 @@ function getComputerChoice(){
 
 }
 
-function getPlayerChoice(){
-    while(true){
-        let result = prompt("Enter Rock Paper or Scissors");
-        if(result == null){
-            continue;
-        }
-        result = result.toLowerCase();
-        if(result == "rock" || 
-           result == "paper"||
-           result == "scissors"){
-            return result;
-           }
-    }
-}
+
 function rPSRound(computerChoice,playerChoice){
 if(computerChoice === playerChoice){
     return "Tie no winner";
@@ -47,37 +34,13 @@ if(computerChoice === playerChoice){
 
 
 
-function game(playerChoice){
-    const playerScore = document.querySelector("#playerScore");
-    const compScore = document.querySelector("#compScore");
-    const container = document.querySelector("#container");
-    const output = document.createElement("p");
-    container.appendChild(output);
 
-    let playerWins = 0;
-    let compWins = 0;
-    for(let i = 0; i < 1; i++){
-        let result = rPSRound(getComputerChoice(),playerChoice);
-        output.textContent = result;
-        if(result.substring(0,8) == "You Lose"){
-            compWins++;
-            compScore.textContent = compWins;
-        }else{
-            playerWins++;
-            playerScore.textContent = playerWins;
-        }
-    }
-    if(playerWins > compWins){
-        console.log(`You Win ${playerWins} times`);
-    }else {
-        console.log(`You Lose ${compWins}`);
-    }
-}
-
+// Dom Elements
 const container = document.querySelector("#container");
 const output = document.createElement("p");
 container.appendChild(output);
 const rock = document.querySelector("#rock");
+// Event Listeners
 rock.addEventListener("click",() => {
     output.textContent = rPSRound(getComputerChoice(),"rock");
 
