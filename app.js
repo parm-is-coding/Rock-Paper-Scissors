@@ -33,16 +33,26 @@ if(computerChoice === playerChoice){
 }
 
 
-
+// add counter incrementation after playing game
 
 // Dom Elements
 const container = document.querySelector("#container");
 const output = document.createElement("p");
 container.appendChild(output);
 const rock = document.querySelector("#rock");
+const compScore = document.querySelector("#compScore");
+const playerScore = document.querySelector("#playerScore");
 // Event Listeners
 rock.addEventListener("click",() => {
-    output.textContent = rPSRound(getComputerChoice(),"rock");
+    
+    let result= rPSRound(getComputerChoice(),"rock");
+    if(result.substring(0,8) == "You Lose"){
+        compScore.textContent = Number(compScore.textContent) + 1;
+    }else if (result.substring(0,7) == "You Win") {
+        playerScore.textContent = Number(playerScore.textContent) + 1;
+    }
+    output.textContent = result;
+    
 
 })
 const paper = document.querySelector("#paper");
